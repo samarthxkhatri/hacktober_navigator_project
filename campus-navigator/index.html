@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Acropolis Campus Navigator · 2D Map & Virtual Walk</title>
+  <meta name="description" content="Explore Acropolis Institute of Technology and Research (AITR) Indore with an interactive 2D floor plan of Blocks 1, 2, and 3 and an immersive street-view virtual walk.">
+  <meta name="theme-color" content="#14202a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/map2d.css">
+</head>
+<body class="mode-landing">
+
+  <!-- ======================================================================
+       LANDING PAGE & 2D MAP VIEW (Default)
+       ====================================================================== -->
+  <div id="landing-wrapper">
+    <!-- Ambient Glow Background -->
+    <div class="landing-ambient-glow" aria-hidden="true">
+      <div class="glow-orb-1"></div>
+      <div class="glow-orb-2"></div>
+    </div>
+
+    <!-- Header Navigation Bar -->
+    <header class="landing-nav">
+      <div class="landing-brand">
+        <div class="brand-logo-icon">🏛️</div>
+        <div class="brand-titles">
+          <span class="brand-main">Acropolis Campus Navigator</span>
+          <span class="brand-sub">Mechanical Engineering Dept · AITR Indore</span>
+        </div>
+      </div>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#overview" class="nav-link">Overview</a>
+        <a href="#floorplan-explorer-section" class="nav-link">2D Floor Plan (3 Blocks)</a>
+        <a href="#features-overview" class="nav-link">Features</a>
+        <a href="#directory-section" class="nav-link">Labs & Rooms Directory</a>
+        <a href="#blueprint-compare" class="nav-link">Blueprint Photo</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#floorplan-explorer-section" class="btn glass" id="nav-btn-2dmap">🗺️ 2D Map</a>
+        <button class="btn primary glow" id="nav-btn-start-walk">🚶 Start Virtual Walk</button>
+      </div>
+    </header>
+
+    <!-- Main Landing Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="landing-hero" id="overview">
+        <div class="hero-badge-tag">
+          <span>🎓</span> Acropolis Institute of Technology and Research, Indore
+        </div>
+        <h1 class="hero-headline">
+          Interactive Campus Walk & 2D Floor Plan Navigator
+        </h1>
+        <p class="hero-subhead">
+          Welcome to the digital campus navigator for the Department of Mechanical Engineering. 
+          Experience a dual-mode navigation system: inspect our high-precision architectural 
+          <strong>2D Ground Floor Plan of Blocks 1, 2, and 3</strong> with industry labs and classrooms, 
+          or take an immersive <strong>first-person street-view walk</strong> from the Security Gate to departmental corridors.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#floorplan-explorer-section" class="btn-hero primary">
+            <span>🗺️</span> Explore 2D Map (3 Blocks)
+          </a>
+          <button class="btn-hero secondary" id="hero-btn-walk">
+            <span>🚶</span> Start Virtual Street Walk
+          </button>
+          <a href="#directory-section" class="btn-hero secondary">
+            <span>🔬</span> Browse Labs & CoE
+          </a>
+        </div>
+
+        <!-- Key Campus Stats -->
+        <div class="hero-stats-grid">
+          <div class="stat-card glass">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Connected Academic Blocks</div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-number">28+</div>
+            <div class="stat-label">Specialized Labs & Rooms</div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Centers of Excellence</div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Ground Floor Coverage</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Cards Section -->
+      <section class="features-section" id="features-overview">
+        <div class="features-grid">
+          <div class="feature-card glass">
+            <div class="feature-icon-box">🗺️</div>
+            <h3>Architectural 2D Floor Plan</h3>
+            <p>
+              Accurately drafted from the official Department Ground Floor blueprint. 
+              Explore Blocks 1, 2, and 3 with room dimensions, seating capacity, equipment listings, 
+              live search, and CAD blueprint mode.
+            </p>
+          </div>
+
+          <div class="feature-card glass">
+            <div class="feature-icon-box">🚶</div>
+            <h3>First-Person Street-View Walk</h3>
+            <p>
+              Walk step-by-step through the campus using high-resolution POV photography. 
+              Features directional floating arrows, intelligent pathfinding, and "Walk me there" auto-pilot navigation.
+            </p>
+          </div>
+
+          <div class="feature-card glass">
+            <div class="feature-icon-box">🔬</div>
+            <h3>Industry Centers of Excellence</h3>
+            <p>
+              Direct access to world-class facilities: <strong>IBM Software CoE</strong> (Cloud & AI), 
+              <strong>SKF CoE Room 23</strong> (Condition Monitoring & Bearing Tribology), and 
+              <strong>AICTE IDEA Lab</strong> (3D Printing & Prototyping).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2D FLOOR PLAN EXPLORER SECTION -->
+      <section class="floorplan-explorer-section" id="floorplan-explorer-section">
+        <div class="section-header-row">
+          <div class="section-titles">
+            <h2>Architectural 2D Floor Plan (Ground Floor)</h2>
+            <p>Interactive vector CAD blueprint of Block 1, Block 2, and Block 3 · Click any room or lab to inspect details</p>
+          </div>
+
+          <!-- Live Room Search -->
+          <div class="map2d-search-box">
+            <svg class="search-icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>
+            <input type="text" id="map2d-search-input" placeholder="Search room, lab, or code (e.g. SKF, IBM, TR-101)..." autocomplete="off">
+            <div class="map2d-search-results" id="map2d-search-results" hidden></div>
+          </div>
+        </div>
+
+        <!-- Toolbar: Block Tabs, Actions & Theme Toggle -->
+        <div class="map2d-toolbar-top">
+          <!-- Block Switcher Tabs -->
+          <div class="block-tabs-bar" id="block-tabs-bar" role="tablist">
+            <!-- Rendered by map2d.js -->
+          </div>
+
+          <!-- Map Tools & View Controls -->
+          <div class="map-actions-group">
+            <button class="map-tool-btn" id="map-theme-toggle" title="Toggle Blueprint CAD view">📐 Blueprint CAD</button>
+            <button class="map-tool-btn" id="map-fullscreen-toggle" title="Toggle Fullscreen">⛶ Fullscreen Map</button>
+            <button class="map-tool-btn" id="map-zoom-in" title="Zoom In">＋</button>
+            <button class="map-tool-btn" id="map-zoom-out" title="Zoom Out">－</button>
+            <button class="map-tool-btn" id="map-zoom-reset" title="Reset View">⟲ Reset</button>
+          </div>
+        </div>
+
+        <!-- Category Filter Chips -->
+        <div class="category-filter-bar" id="category-filter-bar">
+          <!-- Rendered by map2d.js -->
+        </div>
+
+        <!-- SVG Map Container Card -->
+        <div class="map2d-canvas-card" id="map2d-container">
+          <div id="map2d-svg-wrap">
+            <!-- Dynamic SVG injected by map2d.js -->
+          </div>
+
+          <!-- Floating Zoom Controls -->
+          <div class="map-floating-hud">
+            <button class="hud-zoom-btn" onclick="Campus2DMap.focusBlock('all')" title="Reset Map View">⟲</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Department Facilities & Labs Directory -->
+      <section class="directory-section" id="directory-section">
+        <div class="section-titles">
+          <h2>Department Facilities & Rooms Directory</h2>
+          <p>Comprehensive list of laboratories, classrooms, and administrative offices across Blocks 1, 2, and 3</p>
+        </div>
+
+        <div class="rooms-directory-grid" id="rooms-directory-grid">
+          <!-- Rendered by map2d.js -->
+        </div>
+      </section>
+
+      <!-- Blueprint Photo Reference Section -->
+      <section class="blueprint-reference-section" id="blueprint-compare">
+        <div class="blueprint-compare-card glass">
+          <div class="compare-photo-wrap">
+            <img src="photos/floor-plan.jpg" alt="Mechanical Engineering Department Ground Floor Plan at AITR Indore" loading="lazy">
+            <span class="compare-photo-badge">📷 Original Department Wall Blueprint</span>
+          </div>
+          <div class="compare-info">
+            <span class="hero-badge-tag">📐 Source Blueprint Reference</span>
+            <h3>Drawn Directly From Official Floor Plan</h3>
+            <p>
+              The interactive 2D map above was drafted based directly on this official Ground Floor Plan 
+              mounted at the Department of Mechanical Engineering entrance lobby at Acropolis Institute of Technology and Research (AITR), Indore.
+            </p>
+            <ul class="compare-features-list">
+              <li><strong>North Orientation:</strong> Oriented with North pointing to the right, matching the blueprint's original arrow marker.</li>
+              <li><strong>Front Corridor & Lawns:</strong> Reflects the three manicured lawns, two pedestrian access pathways, and main access road.</li>
+              <li><strong>3 Academic Wings:</strong> Captures the angled layout of Block 1 (Auditorium & Workshop), Block 2 (IBM, SKF & AICTE Labs), and Block 3 (Core Mechanical & Automotive Labs).</li>
+              <li><strong>Exact Dimensions:</strong> Preserves all architectural room dimensions (e.g. 61'2" × 34'2", 26'10" × 34'0", 41'10" × 39'6").</li>
+            </ul>
+            <a href="#floorplan-explorer-section" class="btn primary glow">
+              Explore Vector 2D Map ➜
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Landing Footer -->
+    <footer class="landing-footer">
+      <div class="footer-links">
+        <a href="#overview">Overview</a>
+        <a href="#floorplan-explorer-section">2D Floor Plan</a>
+        <a href="#directory-section">Labs Directory</a>
+        <a href="#blueprint-compare">Blueprint Reference</a>
+        <a href="#" onclick="CampusWalk.switchMode('walk'); return false;">Virtual Walk</a>
+      </div>
+      <p>
+        Department of Mechanical Engineering · Acropolis Institute of Technology and Research (AITR), Indore
+      </p>
+      <p style="font-size:12px; opacity:0.6; margin-top:6px;">
+        Designed for students, faculty, and campus visitors. Keyboard shortcuts: <kbd>/</kbd> to search, <kbd>Esc</kbd> to close modal.
+      </p>
+    </footer>
+  </div>
+
+  <!-- ======================================================================
+       STREET-VIEW VIRTUAL WALK VIEW (Activated on "Start Virtual Walk")
+       ====================================================================== -->
+  <!-- PHOTO STAGE -->
+  <main id="stage" aria-live="polite">
+    <div id="backdrop"></div>
+    <div id="layers"></div>
+  </main>
+
+  <!-- TOP BAR HUD -->
+  <header class="hud top">
+    <div class="loc glass" id="locChip">
+      <div class="loc-area" id="locArea">Campus</div>
+      <h1 class="loc-name" id="locName">Loading…</h1>
+    </div>
+
+    <div class="search glass" role="search">
+      <svg class="s-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>
+      <input id="q" type="text" placeholder="Where to? Try “SKF”, “IBM”, “Block-II”, “parking”…" autocomplete="off"
+             role="combobox" aria-expanded="false" aria-controls="results" aria-label="Search destination">
+      <kbd id="slashHint" aria-hidden="true">/</kbd>
+      <ul id="results" role="listbox" hidden></ul>
+    </div>
+
+    <div class="top-actions">
+      <!-- Return to Landing Page & 2D Map Button -->
+      <button class="btn glass hud-home-btn" id="homeBtn" title="Return to Landing Page & 2D Map">
+        🏠 Home & 2D Map
+      </button>
+      <button class="btn glass" id="placesBtn" aria-expanded="false" aria-controls="places">Places</button>
+    </div>
+  </header>
+
+  <!-- NAV BANNER -->
+  <section id="banner" class="banner glass" hidden>
+    <div class="banner-text">
+      <div class="banner-title" id="bannerTitle"></div>
+      <div class="banner-sub" id="bannerSub"></div>
+    </div>
+    <button class="btn ghost" id="autoBtn">Walk me there</button>
+    <button class="btn ghost" id="cancelBtn">Cancel</button>
+  </section>
+
+  <!-- INFO CARD (for a place picked on the map / list) -->
+  <aside id="card" class="card glass" hidden>
+    <button class="x" id="cardClose" aria-label="Close">×</button>
+    <h2 id="cardName"></h2>
+    <p class="card-area" id="cardArea"></p>
+    <p id="cardDesc"></p>
+    <div class="tags" id="cardTags"></div>
+    <div class="card-actions">
+      <button class="btn primary" id="cardGo">Take me there</button>
+      <button class="btn ghost" id="cardJump">Jump here</button>
+    </div>
+  </aside>
+
+  <!-- PLACES DRAWER -->
+  <aside id="places" class="places glass" hidden>
+    <div class="places-head">
+      <h2>All places</h2>
+      <button class="x" id="placesClose" aria-label="Close">×</button>
+    </div>
+    <div id="placesList"></div>
+  </aside>
+
+  <!-- MINI MAP -->
+  <section id="mapWrap" class="mapwrap glass" aria-label="Campus map">
+    <div class="map-head">
+      <div class="map-tabs" id="mapTabs" role="tablist"></div>
+      <button class="icon" id="mapExpand" aria-label="Expand map" title="Expand map">
+        <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+      </button>
+    </div>
+    <svg id="map" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"></svg>
+  </section>
+
+  <!-- EDIT MODE PANEL -->
+  <aside id="edit" class="edit glass" hidden>
+    <strong>Edit mode</strong>
+    <span>Drag arrows to reposition them.</span>
+    <div class="edit-row">
+      <button class="btn ghost" id="editCopy">Copy JSON</button>
+      <button class="btn ghost" id="editReset">Reset</button>
+      <button class="btn ghost" id="editDone">Done</button>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast glass" role="status" hidden></div>
+  <div id="loader"><div class="ld-mark"></div><p>Loading campus…</p></div>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/map2d-data.js"></script>
+  <script src="js/map2d.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
