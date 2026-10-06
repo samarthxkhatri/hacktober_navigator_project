@@ -23,7 +23,7 @@
   let isPanning = false;
   let startPan = { x: 0, y: 0 };
 
-  const SVG_WIDTH = 1200;
+  const SVG_WIDTH = 1360;
   const SVG_HEIGHT = 860;
 
   // DOM Elements
@@ -129,7 +129,7 @@
           </g>
 
           <!-- Compass Rose (Top Right - Matching Photo with North pointing East/Right) -->
-          <g class="blueprint-compass" transform="translate(1030, 48)">
+          <g class="blueprint-compass" transform="translate(1190, 36)">
             <rect x="0" y="0" width="120" height="42" class="stamp-box" rx="6" />
             <text x="25" y="26" class="compass-n-label">N</text>
             <!-- Bold arrow pointing Right -->
@@ -142,6 +142,8 @@
             <text x="290" y="80" class="block-marker-label">BLOCK - 1</text>
             <text x="610" y="80" class="block-marker-label">BLOCK - 2</text>
             <text x="870" y="80" class="block-marker-label">BLOCK - 3</text>
+            <text x="1095" y="80" class="block-marker-label">PALM AVE</text>
+            <text x="1245" y="80" class="block-marker-label">SPORTS & FOOD</text>
           </g>
 
           <!-- EXTERIOR ELEMENTS (Road, Lawns, Pathways) -->
@@ -218,14 +220,17 @@
     }).join('');
   }
 
-  // Render Corridors connecting the wings
+  // Render Corridors connecting the wings and main passage
   function renderCorridors() {
     return `
-      <!-- Lower Corridor running across the front wing -->
-      <rect x="70" y="520" width="940" height="30" class="corridor-rect" />
-      <text x="210" y="540" class="corridor-text">WEST WING CORRIDOR</text>
-      <text x="560" y="540" class="corridor-text">CENTRAL CORRIDOR (BLOCK - 2)</text>
-      <text x="860" y="540" class="corridor-text">EAST WING CORRIDOR (BLOCK - 3)</text>
+      <!-- Lower Main Front Connecting Passage (Spine linking Library, Block 1, Block 2 & Block 3) -->
+      <g class="main-passage-group">
+        <rect x="70" y="520" width="940" height="30" class="corridor-rect main-passage-rect" />
+        <line x1="72" y1="520" x2="1008" y2="520" stroke="rgba(255, 201, 40, 0.4)" stroke-width="1.5" stroke-dasharray="6 4" />
+        <text x="210" y="539" class="corridor-text">LIBRARY & BLOCK 1 LINK</text>
+        <text x="540" y="539" class="corridor-text passage-highlight-text">MAIN CONNECTING PASSAGE (CENTRAL SPINE)</text>
+        <text x="880" y="539" class="corridor-text">BLOCK 3 PASSAGE ENTRY</text>
+      </g>
 
       <!-- Diagonal Corridor Block 1 -->
       <polygon points="200,230 330,230 315,240 185,240" class="corridor-rect" />
@@ -233,8 +238,9 @@
       <!-- Diagonal Corridor Block 2 -->
       <polygon points="510,230 710,230 690,240 490,240" class="corridor-rect" />
 
-      <!-- Diagonal Corridor Block 3 -->
+      <!-- Diagonal Corridor Block 3 (Aisle connecting Foyer, Room 31, Room 35 & rear exit) -->
       <polygon points="740,230 940,230 920,240 720,240" class="corridor-rect" />
+      <polygon points="755,240 770,240 860,520 845,520" class="corridor-rect" opacity="0.65" />
     `;
   }
 
@@ -474,6 +480,12 @@
           <div class="inspector-dim-tag">Blueprint Area / Size: <strong>${room.dimensions}</strong></div>
         </div>
 
+        ${room.photo ? `
+          <div class="inspector-photo-preview">
+            <img src="${room.photo}" alt="${room.name}" />
+          </div>
+        ` : ''}
+
         <div class="inspector-body">
           <p class="inspector-desc">${room.desc}</p>
 
@@ -540,6 +552,11 @@
           <span class="room-cat-badge" style="background:#16a34a33; color:#4ade80">Campus Grounds</span>
           <h2 class="inspector-title">${ext.name}</h2>
         </div>
+        ${ext.photo ? `
+          <div class="inspector-photo-preview">
+            <img src="${ext.photo}" alt="${ext.name}" />
+          </div>
+        ` : ''}
         <div class="inspector-body">
           <p class="inspector-desc">${ext.desc}</p>
         </div>
@@ -698,7 +715,9 @@
     const centers = {
       block1: { x: -80, y: 30, zoom: 1.25 },
       block2: { x: -280, y: 30, zoom: 1.25 },
-      block3: { x: -520, y: 30, zoom: 1.25 }
+      block3: { x: -520, y: 30, zoom: 1.25 },
+      'palm-extension': { x: -680, y: 30, zoom: 1.25 },
+      'sports-canteen': { x: -780, y: 30, zoom: 1.25 }
     };
     if (centers[blockId]) {
       zoomLevel = centers[blockId].zoom;

@@ -12,10 +12,12 @@ window.MAP2D_DATA = {
     institute: "Acropolis Institute of Technology and Research, Indore",
     orientation: "North (Right)",
     blocks: [
-      { id: "all", name: "All Blocks", count: 28 },
+      { id: "all", name: "All Areas", count: 41 },
       { id: "block1", name: "Block 1 (Auditorium & Workshop)", count: 9 },
       { id: "block2", name: "Block 2 (Centers of Excellence)", count: 10 },
-      { id: "block3", name: "Block 3 (Core Mechanical Labs)", count: 9 }
+      { id: "block3", name: "Block 3 (Core Mechanical Labs & Extension)", count: 12 },
+      { id: "palm-extension", name: "East Extension (Palm Avenue)", count: 5 },
+      { id: "sports-canteen", name: "Sports Complex & Canteen Hub", count: 4 }
     ],
     categories: [
       { id: "all", name: "All Spaces", icon: "🏢", color: "#64748b" },
@@ -24,7 +26,8 @@ window.MAP2D_DATA = {
       { id: "classroom", name: "Classrooms & Tutorials", icon: "📚", color: "#3b82f6" },
       { id: "seminar", name: "Auditorium & Seminar", icon: "🏛️", color: "#8b5cf6" },
       { id: "office", name: "Faculty & Administration", icon: "👔", color: "#10b981" },
-      { id: "amenity", name: "Corridors & Amenities", icon: "🚻", color: "#ec4899" }
+      { id: "amenity", name: "Corridors & Amenities", icon: "🚻", color: "#ec4899" },
+      { id: "sports", name: "Sports & Dining Hub", icon: "🏀", color: "#f97316" }
     ]
   },
 
@@ -626,30 +629,88 @@ window.MAP2D_DATA = {
     },
     {
       id: "b3-thermal",
-      code: "LAB-TH",
+      code: "ROOM-35",
       block: "block3",
       blockLabel: "Block 3",
-      name: "Heat Transfer & Thermal Engineering Lab",
-      blueprintLabel: "LAB 25'10\"X34'0\"",
+      name: "Heat and Mass Transfer & Thermal Engineering Lab (Room 35)",
+      blueprintLabel: "LAB 35 (25'10\"X34'0\")",
       dimensions: "25'10\" × 34'0\"",
       category: "lab",
       categoryLabel: "Specialized Labs",
       capacity: "35 Students",
-      inCharge: "Senior Faculty Thermal Stream",
-      desc: "Comprehensive thermodynamics laboratory for testing conduction, convection, radiation heat transfer, refrigeration cycles, and heat exchanger performance.",
+      inCharge: "Senior Faculty, Thermal Engineering Stream",
+      desc: "Comprehensive thermodynamics and heat transfer laboratory (Room 35). Equipped with working test rigs for conduction, natural convection, forced convection, Stefan-Boltzmann radiation constant verification, thermal conductivity of insulating powder, and heat exchanger performance.",
       equipment: [
-        "Shell and Tube Heat Exchanger Apparatus",
+        "Natural Convection Heat Transfer Apparatus",
+        "Thermal Conductivity of Insulating Powder Testing Bench",
         "Stefan-Boltzmann Radiation Constant Verification Rig",
-        "Forced and Natural Convection Testing Units",
-        "Vapor Compression Refrigeration & Air-Conditioning Tutor",
-        "Critical Heat Flux & Boiling Heat Transfer Rig"
+        "Shell and Tube Heat Exchanger Experimental Unit",
+        "Pin-Fin Natural & Forced Convection Heat Transfer Rig",
+        "Parallel & Counter Flow Heat Exchanger Apparatus"
       ],
+      photo: "photos/block3-thermal-lab.jpg",
+      streetViewId: "block3-thermal-lab",
       svg: {
         type: "polygon",
         points: "920,240 1005,240 985,380 900,380",
         labelPos: [952, 310]
       },
-      tags: ["Heat Transfer", "Thermal", "Refrigeration", "Thermodynamics", "Radiation"]
+      tags: ["Room 35", "Heat Transfer", "Thermal", "Convection", "Insulating Powder", "Stefan Boltzmann", "Block 3"]
+    },
+    {
+      id: "b3-room31",
+      code: "ROOM-31",
+      block: "block3",
+      blockLabel: "Block 3",
+      name: "3D Printer Prototyping Cell & Faculty Cabin (Room 31)",
+      blueprintLabel: "ROOM 31 / 3D PRINTER",
+      dimensions: "16'1\" × 15'0\"",
+      category: "lab",
+      categoryLabel: "Specialized Labs",
+      capacity: "12 Students & Researchers",
+      inCharge: "Mr. Hiraman Sikdar (Assistant Professor)",
+      desc: "Specialized 3D printing and digital prototyping laboratory under the supervision of Prof. Hiraman Sikdar. Houses precision FDM/SLA additive manufacturing systems, slicing workstations, and 3D geometric verification equipment.",
+      equipment: [
+        "High-Precision FDM 3D Printers",
+        "3D Toolpath & Slicing Software Workstations",
+        "Additive Prototyping Material Storage",
+        "Post-Processing & Finishing Station",
+        "Faculty Research & Consultation Desk"
+      ],
+      photo: "photos/block3-room31.jpg",
+      streetViewId: "block3-room31",
+      svg: {
+        type: "polygon",
+        points: "765,390 830,390 815,490 750,490",
+        labelPos: [790, 440]
+      },
+      tags: ["3D Printer", "Additive Manufacturing", "Room 31", "Hiraman Sikdar", "Prototyping", "Block 3"]
+    },
+    {
+      id: "b3-lounge",
+      code: "B3-LOUNGE",
+      block: "block3",
+      blockLabel: "Block 3",
+      name: "Block-III Placement Showcase Lounge & Waiting Area",
+      blueprintLabel: "STUDENT LOUNGE & FOYER",
+      dimensions: "24'0\" × 16'0\"",
+      category: "amenity",
+      categoryLabel: "Corridors & Amenities",
+      capacity: "20 Students",
+      desc: "Student concourse and waiting lounge outside Room 35. Features steel bench seating, Acropolis placement achievement hoarding (GM, Unilever, etc.), and aisle leading to the rear security gate.",
+      equipment: [
+        "Student Ergonomic Waiting Benches",
+        "Acropolis Placement Achievement Hoarding",
+        "Directional Wayfinding to Labs & Rear Exit"
+      ],
+      photo: "photos/block3-lounge.jpg",
+      streetViewId: "block3-lounge",
+      svg: {
+        type: "polygon",
+        points: "835,390 910,390 895,490 820,490",
+        labelPos: [865, 440]
+      },
+      tags: ["Lounge", "Placement", "Waiting Area", "Block 3", "Room 35 Access"]
     },
     {
       id: "b3-metro",
@@ -673,10 +734,30 @@ window.MAP2D_DATA = {
       ],
       svg: {
         type: "polygon",
-        points: "800,390 890,390 870,500 780,500",
-        labelPos: [835, 445]
+        points: "915,390 995,390 980,490 900,490",
+        labelPos: [948, 440]
       },
       tags: ["Metrology", "Measurement", "Quality Control", "Inspection", "Microscope"]
+    },
+    {
+      id: "b3-foyer",
+      code: "B3-FOYER",
+      block: "block3",
+      blockLabel: "Block 3",
+      name: "Block-III Entrance Foyer & Skylight Passage",
+      blueprintLabel: "BLOCK-III FOYER / ENTRY",
+      dimensions: "20'0\" × 18'0\"",
+      category: "amenity",
+      categoryLabel: "Corridors & Amenities",
+      desc: "Covered transition junction and entrance foyer connecting the main campus passage into Block-III. Features an open overhead skylight with tie-beams, departmental announcement board, and corridor access.",
+      photo: "photos/block3-foyer.jpg",
+      streetViewId: "block3-foyer",
+      svg: {
+        type: "rect",
+        x: 755, y: 550, width: 60, height: 60,
+        labelPos: [785, 580]
+      },
+      tags: ["Block 3", "Foyer", "Entrance", "Skylight", "Notice Board"]
     },
     {
       id: "b3-stair3",
@@ -737,6 +818,287 @@ window.MAP2D_DATA = {
         labelPos: [950, 580]
       },
       tags: ["Store", "Tool Crib", "Inventory", "Restroom"]
+    },
+    {
+      id: "b-passage",
+      code: "PASSAGE",
+      block: "all",
+      blockLabel: "Main Passage Spine",
+      name: "Main Connecting Passage (Library – Block 1 – Block 2 – Block 3)",
+      blueprintLabel: "MAIN CONNECTING PASSAGE",
+      dimensions: "180'0\" × 12'0\"",
+      category: "amenity",
+      categoryLabel: "Corridors & Amenities",
+      desc: "The primary connecting passage and architectural spine linking the Library, 1st Block, 2nd Block, and 3rd Block. Overlooks the front landscaped lawns, providing continuous weather-protected student circulation across all academic departments.",
+      equipment: [
+        "Covered Weather-Protected Walkway",
+        "Natural Daylight & Courtyard Views",
+        "Direct Inter-Block Access Portals"
+      ],
+      tags: ["Passage", "Connecting Corridor", "Main Spine", "Library", "Block 1", "Block 2", "Block 3"],
+      streetViewId: "dept-me",
+      svg: {
+        type: "rect",
+        x: 70, y: 520, width: 940, height: 26,
+        labelPos: [540, 533]
+      }
+    },
+
+    /* -------------------------- BLOCK-II ROADWAY FACADE -------------------------- */
+    {
+      id: "b2-facade",
+      code: "B2-EXT",
+      block: "palm-extension",
+      blockLabel: "Block 2 Front",
+      name: "Block-II Roadway Facade & Hacktoberfest Hub",
+      blueprintLabel: "BLOCK-II FRONT 36'X22'",
+      dimensions: "36'0\" × 22'0\"",
+      category: "amenity",
+      categoryLabel: "Corridors & Amenities",
+      capacity: "Open Access Area",
+      inCharge: "Campus Events Coordinator",
+      desc: "Front roadway facade of Block-II featuring the accessible entry ramp, the Department of Mechanical Engineering SKF Centre of Excellence banner, and official Hacktoberfest event showcase.",
+      equipment: [
+        "Accessible Entry Ramp & Potted Planter Landscaping",
+        "SKF Centre of Excellence Vertical Signage",
+        "Official Hacktoberfest Event Display Banner",
+        "Main Campus Road Access Crosswalk"
+      ],
+      svg: {
+        type: "polygon",
+        points: "690,625 760,625 760,715 690,715",
+        labelPos: [725, 670]
+      },
+      tags: ["Block-II", "Facade", "Hacktoberfest", "SKF", "Ramp"],
+      streetViewId: "block2-facade",
+      photo: "photos/block2-facade.jpg"
+    },
+
+    /* -------------------------- EAST EXTENSION (AFTER BLOCK 3) -------------------------- */
+    {
+      id: "ext-palm-speedbreaker",
+      code: "PALM-1",
+      block: "palm-extension",
+      blockLabel: "After Block 3",
+      name: "Palm Avenue Speed Breaker & MSME Crossing",
+      blueprintLabel: "PALM CROSSING",
+      dimensions: "40'0\" × 24'0\"",
+      category: "amenity",
+      categoryLabel: "Corridors & Amenities",
+      capacity: "Campus Arterial",
+      inCharge: "Campus Safety & Transport",
+      desc: "Zebra-striped speed breaker directly past Block 3 with the MSME Nodal Officers welcome board and the commencement of the Royal Palm Avenue.",
+      equipment: [
+        "Zebra-Striped Traffic Calming Speed Breaker",
+        "MSME Nodal Officers Official Welcome Board",
+        "Pedestrian Safety Crosswalk to East Campus",
+        "Lawn Border Planters and Royal Palms"
+      ],
+      svg: {
+        type: "polygon",
+        points: "1035,620 1155,620 1155,715 1035,715",
+        labelPos: [1095, 665]
+      },
+      tags: ["Palm Avenue", "Speed Breaker", "MSME", "Crossing", "Road"],
+      streetViewId: "palm-speedbreaker",
+      photo: "photos/palm-speedbreaker.jpg"
+    },
+    {
+      id: "ext-palm-walkway",
+      code: "PALM-2",
+      block: "palm-extension",
+      blockLabel: "After Block 3",
+      name: "Royal Palm Avenue Boulevard",
+      blueprintLabel: "ROYAL PALM AVENUE",
+      dimensions: "90'0\" × 30'0\"",
+      category: "amenity",
+      categoryLabel: "Corridors & Amenities",
+      capacity: "Open Promenade",
+      inCharge: "Campus Landscape & Horticulture",
+      desc: "Iconic campus boulevard flanked by towering royal palms with white-and-red painted trunks, pedestrian walkways, and academic wing facades.",
+      equipment: [
+        "Lined Royal Palm Boulevard (Roystonea Regia)",
+        "Overhead Steel Truss Gateway Arch",
+        "Shaded Sidewalks for Student Transit",
+        "Night Streetlight Illumination"
+      ],
+      svg: {
+        type: "polygon",
+        points: "1035,465 1155,465 1155,605 1035,605",
+        labelPos: [1095, 535]
+      },
+      tags: ["Palm Avenue", "Boulevard", "Royal Palms", "Green space", "Walkway"],
+      streetViewId: "palm-walkway",
+      photo: "photos/palm-walkway.jpg"
+    },
+    {
+      id: "ext-palm-promenade",
+      code: "PALM-3",
+      block: "palm-extension",
+      blockLabel: "After Block 3",
+      name: "Palm Avenue South Promenade & Two-Wheeler Bay",
+      blueprintLabel: "TWO-WHEELER BAY",
+      dimensions: "90'0\" × 30'0\"",
+      category: "amenity",
+      categoryLabel: "Corridors & Amenities",
+      capacity: "120 Parking Bays",
+      inCharge: "Campus Estate & Security",
+      desc: "Southern stretch of Palm Avenue featuring designated shaded two-wheeler parking under the royal palm canopy, active student walkways, and crosswalks.",
+      equipment: [
+        "Organized Two-Wheeler / Scooter Parking Lanes",
+        "Palm-Shaded Pedestrian Promenade",
+        "Campus Directional Wayfinding Signage",
+        "Perimeter CCTV Surveillance"
+      ],
+      svg: {
+        type: "polygon",
+        points: "1035,310 1155,310 1155,450 1035,450",
+        labelPos: [1095, 380]
+      },
+      tags: ["Parking", "Promenade", "Bikes", "Students", "Palm Avenue"],
+      streetViewId: "palm-promenade",
+      photo: "photos/palm-promenade.jpg"
+    },
+    {
+      id: "ext-south-plaza",
+      code: "PALM-4",
+      block: "palm-extension",
+      blockLabel: "After Block 3",
+      name: "South Academic Wing Plaza Approach",
+      blueprintLabel: "SOUTH PLAZA",
+      dimensions: "80'0\" × 35'0\"",
+      category: "amenity",
+      categoryLabel: "Corridors & Amenities",
+      capacity: "Open Plaza",
+      inCharge: "Campus Infrastructure Team",
+      desc: "Paved courtyard promenade with decorative pavers, tree canopies, and campus safety barriers leading directly toward the south academic facilities.",
+      equipment: [
+        "Interlocking Paver Courtyard Walkway",
+        "Mature Shading Ornamental Tree Canopy",
+        "Mobile Security Barrier Checkpoints",
+        "Direct Linkage toward Campus Main Security Gate"
+      ],
+      svg: {
+        type: "polygon",
+        points: "1035,140 1155,140 1155,295 1035,295",
+        labelPos: [1095, 218]
+      },
+      tags: ["Plaza", "South Block", "Pavers", "Walkway", "Trees"],
+      streetViewId: "south-plaza",
+      photo: "photos/south-plaza.jpg"
+    },
+
+    /* ---------------------- SPORTS COMPLEX & CANTEEN HUB ---------------------- */
+    {
+      id: "sports-complex",
+      code: "SPORTS",
+      block: "sports-canteen",
+      blockLabel: "Sports Hub",
+      name: "Acropolis Sports Complex & Basketball Court",
+      blueprintLabel: "SPORTS COMPLEX & BASKETBALL COURT",
+      dimensions: "120'0\" × 85'0\"",
+      category: "sports",
+      categoryLabel: "Sports & Dining Hub",
+      capacity: "Outdoor Sports Arena",
+      inCharge: "Dept. of Physical Education & Sports",
+      desc: "Full-scale athletic arena and regulation basketball court facility accommodating inter-college sports tournaments, basketball championships, volleyball, and physical conditioning.",
+      equipment: [
+        "Regulation Basketball Court with Acrylic Surface & Hoops",
+        "Spectator Seating & Tournament Viewing Stands",
+        "High-Intensity Evening Floodlighting",
+        "Athletics Conditioning & Sports Equipment Storage"
+      ],
+      photo: "photos/sports-complex-path.jpg",
+      streetViewId: "sports-complex-path",
+      svg: {
+        type: "polygon",
+        points: "1175,140 1315,140 1315,295 1175,295",
+        labelPos: [1245, 218]
+      },
+      tags: ["Sports", "Basketball", "Court", "Athletics", "Gym", "Fitness"]
+    },
+    {
+      id: "canteen-plaza",
+      code: "CANTEEN",
+      block: "sports-canteen",
+      blockLabel: "Canteen Hub",
+      name: "Campus Canteen & Outdoor Food Court",
+      blueprintLabel: "CANTEEN & FOOD TRUCK PLAZA",
+      dimensions: "75'0\" × 50'0\"",
+      category: "sports",
+      categoryLabel: "Sports & Dining Hub",
+      capacity: "250+ Students & Staff",
+      inCharge: "Campus Catering & Student Welfare",
+      desc: "Vibrant campus dining hub and outdoor food court featuring a mobile food truck, beverage bars, fresh refreshment counters, and open-air herringbone paved dining plaza.",
+      equipment: [
+        "Specialized Food Truck & Quick-Service Kitchen Kiosk",
+        "Outdoor Herringbone Interlocking Paver Dining Courtyard",
+        "Cold Beverage & Refreshment Counters",
+        "Eco-Friendly Waste Sorting & Sanitization Stations"
+      ],
+      photo: "photos/canteen-plaza.jpg",
+      streetViewId: "canteen-plaza",
+      svg: {
+        type: "polygon",
+        points: "1175,310 1315,310 1315,450 1175,450",
+        labelPos: [1245, 380]
+      },
+      tags: ["Canteen", "Cafeteria", "Food Truck", "Dining", "Snacks", "Lunch", "Food"]
+    },
+    {
+      id: "canteen-walkway",
+      code: "CANTEEN-WALK",
+      block: "sports-canteen",
+      blockLabel: "Canteen Walkway",
+      name: "Canteen Shaded Walkway & Bike Canopy",
+      blueprintLabel: "CANTEEN WALKWAY & SHED",
+      dimensions: "80'0\" × 20'0\"",
+      category: "amenity",
+      categoryLabel: "Corridors & Amenities",
+      capacity: "Covered Parking & Transit",
+      inCharge: "Campus Estate Management",
+      desc: "Tree-shaded herringbone interlocking paved promenade equipped with covered two-wheeler parking canopy, connecting AFMR, the sports avenue, and the Canteen food court.",
+      equipment: [
+        "Herringbone Paver Pedestrian Transit Lane",
+        "Covered Two-Wheeler / Scooter Parking Canopies",
+        "Mature Shading Avenue Trees"
+      ],
+      photo: "photos/canteen-walkway.jpg",
+      streetViewId: "canteen-walkway",
+      svg: {
+        type: "polygon",
+        points: "1175,465 1315,465 1315,605 1175,605",
+        labelPos: [1245, 535]
+      },
+      tags: ["Canteen Walkway", "Bike Shed", "Parking", "Pavers", "Walkway"]
+    },
+    {
+      id: "afmr-block",
+      code: "AFMR",
+      block: "sports-canteen",
+      blockLabel: "Management Block",
+      name: "Acropolis Faculty of Management & Research (AFMR)",
+      blueprintLabel: "FACULTY OF MANAGEMENT & RESEARCH",
+      dimensions: "90'0\" × 60'0\"",
+      category: "office",
+      categoryLabel: "Faculty & Administration",
+      capacity: "MBA & Research Programs",
+      inCharge: "Director, AFMR",
+      desc: "Dedicated institutional academic building for the Acropolis Faculty of Management & Research. Houses management lecture theatres, MBA seminar rooms, faculty chambers, and administrative offices.",
+      equipment: [
+        "Executive Management Lecture Theatres",
+        "Case Study & Group Discussion Rooms",
+        "Faculty Research Cabins & Board Rooms",
+        "Accessible Ramp Entrance & Landscaped Forecourt"
+      ],
+      photo: "photos/afmr-entrance.jpg",
+      streetViewId: "afmr-entrance",
+      svg: {
+        type: "polygon",
+        points: "1175,620 1315,620 1315,715 1175,715",
+        labelPos: [1245, 665]
+      },
+      tags: ["AFMR", "Management", "MBA", "Research", "Faculty of Management"]
     }
   ],
 
@@ -747,7 +1109,7 @@ window.MAP2D_DATA = {
       name: "Main Campus Arterial Roadway",
       type: "road",
       svg: {
-        x: 40, y: 730, width: 1120, height: 80,
+        x: 40, y: 730, width: 1280, height: 80,
         dashY: 770
       },
       desc: "Wide asphalt two-lane divided road connecting Security Gate, parking bays, Block-I, and Block-II.",
@@ -804,7 +1166,7 @@ window.MAP2D_DATA = {
       blueprintLabel: "LAWN",
       type: "lawn",
       svg: {
-        x: 810, y: 640, width: 290, height: 75
+        x: 810, y: 640, width: 215, height: 75
       },
       desc: "East manicured lawn fronting Block 3 automobile and fluid mechanics laboratories.",
       streetViewId: "palm-avenue"

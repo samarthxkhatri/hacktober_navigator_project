@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Acropolis Campus Navigator · 2D Map & Virtual Walk</title>
-  <meta name="description" content="Explore Acropolis Institute of Technology and Research (AITR) Indore with an interactive 2D floor plan of Blocks 1, 2, and 3 and an immersive street-view virtual walk.">
-  <meta name="theme-color" content="#14202a">
+  <title>Acropolis Institute of Technology and Research (AITR) · Campus Digital Twin & Virtual Walk</title>
+  <meta name="description" content="Official Ground Floor Architectural CAD Floor Plan and 360° POV Virtual Campus Walk of the Department of Mechanical Engineering at Acropolis Institute of Technology and Research (AITR), Indore.">
+  <meta name="theme-color" content="#0c1e38">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/map2d.css">
 </head>
@@ -18,132 +18,230 @@
        LANDING PAGE & 2D MAP VIEW (Default)
        ====================================================================== -->
   <div id="landing-wrapper">
-    <!-- Ambient Glow Background -->
-    <div class="landing-ambient-glow" aria-hidden="true">
-      <div class="glow-orb-1"></div>
-      <div class="glow-orb-2"></div>
-    </div>
+    <!-- Ambient Grid Texture Background -->
+    <div class="landing-ambient-glow" aria-hidden="true"></div>
 
-    <!-- Header Navigation Bar -->
-    <header class="landing-nav">
-      <div class="landing-brand">
-        <div class="brand-logo-icon">🏛️</div>
-        <div class="brand-titles">
-          <span class="brand-main">Acropolis Campus Navigator</span>
-          <span class="brand-sub">Mechanical Engineering Dept · AITR Indore</span>
+    <!-- 1. TOP UTILITY BAR (Official AITR Portal Header) -->
+    <div class="aitr-topbar">
+      <div class="aitr-topbar-inner">
+        <div class="aitr-topbar-left">
+          <span class="topbar-item"><span class="topbar-icon">📞</span> Central Helpline: <strong>0731-4730000</strong></span>
+          <span class="topbar-sep">|</span>
+          <span class="topbar-item"><span class="topbar-icon">✉️</span> <a href="mailto:info@acropolis.in">info@acropolis.in</a></span>
+          <span class="topbar-sep">|</span>
+          <span class="topbar-item topbar-loc"><span class="topbar-icon">📍</span> Bypass Road, Manglia Square, Indore (M.P.) 453771</span>
+        </div>
+        <div class="aitr-topbar-right">
+          <span class="topbar-badge naac-badge">⭐ NAAC 'A+' Accredited</span>
+          <span class="topbar-badge aicte-badge">AICTE Approved · RGPV & DAVV Affiliated</span>
+          <a href="https://aitr.ac.in" target="_blank" rel="noopener" class="topbar-link erp-btn">ERP Login</a>
+          <a href="https://aitr.ac.in" target="_blank" rel="noopener" class="topbar-link student-btn">Student Portal</a>
         </div>
       </div>
+    </div>
 
-      <nav class="nav-links" aria-label="Main Navigation">
-        <a href="#overview" class="nav-link">Overview</a>
-        <a href="#floorplan-explorer-section" class="nav-link">2D Floor Plan (3 Blocks)</a>
-        <a href="#features-overview" class="nav-link">Features</a>
-        <a href="#directory-section" class="nav-link">Labs & Rooms Directory</a>
-        <a href="#blueprint-compare" class="nav-link">Blueprint Photo</a>
-      </nav>
+    <!-- 2. MAIN FLOATING ACADEMIC NAVBAR -->
+    <header class="landing-nav">
+      <div class="aitr-navbar-inner">
+        <a href="#overview" class="landing-brand">
+          <div class="brand-logo-icon">
+            <!-- Official Acropolis Crest SVG -->
+            <svg class="aitr-crest-svg" viewBox="0 0 100 100" width="46" height="46" aria-hidden="true">
+              <path d="M50 4 C24 4 10 16 10 38 C10 68 34 88 50 96 C66 88 90 68 90 38 C90 16 76 4 50 4 Z" fill="#0c1e38" stroke="#f58220" stroke-width="3" />
+              <path d="M50 8 C27 8 15 19 15 38 C15 65 37 83 50 90 C63 83 85 65 85 38 C85 19 73 8 50 8 Z" fill="none" stroke="#fcd34d" stroke-width="1.2" opacity="0.8" />
+              <polygon points="50,16 28,27 72,27" fill="#fcd34d" />
+              <rect x="29" y="28" width="42" height="3" fill="#fcd34d" />
+              <rect x="32" y="32" width="4" height="20" rx="1" fill="#fcd34d" />
+              <rect x="42" y="32" width="4" height="20" rx="1" fill="#fcd34d" />
+              <rect x="54" y="32" width="4" height="20" rx="1" fill="#fcd34d" />
+              <rect x="64" y="32" width="4" height="20" rx="1" fill="#fcd34d" />
+              <rect x="28" y="53" width="44" height="3" fill="#fcd34d" />
+              <g transform="translate(50, 68) scale(0.28)">
+                <circle cx="0" cy="0" r="28" fill="none" stroke="#f58220" stroke-width="8" stroke-dasharray="14 8" />
+                <circle cx="0" cy="0" r="14" fill="#0c1e38" stroke="#fcd34d" stroke-width="4" />
+              </g>
+              <path d="M22 36 C18 46 20 60 28 68" fill="none" stroke="#fcd34d" stroke-width="2" stroke-linecap="round" />
+              <path d="M78 36 C82 46 80 60 72 68" fill="none" stroke="#fcd34d" stroke-width="2" stroke-linecap="round" />
+              <path d="M50 9 C48 12 52 14 50 16 C53 14 52 11 50 9 Z" fill="#ef4444" />
+            </svg>
+          </div>
+          <div class="brand-titles">
+            <span class="brand-main">Acropolis Institute</span>
+            <span class="brand-sub">Department of Mechanical Engineering · <strong>AITR Indore</strong></span>
+          </div>
+        </a>
 
-      <div class="nav-actions">
-        <a href="#floorplan-explorer-section" class="btn glass" id="nav-btn-2dmap">🗺️ 2D Map</a>
-        <button class="btn primary glow" id="nav-btn-start-walk">🚶 Start Virtual Walk</button>
+        <nav class="nav-links" aria-label="Campus Portal Navigation">
+          <a href="#overview" class="nav-link">Overview</a>
+          <a href="#floorplan-explorer-section" class="nav-link active-nav">2D Floor Plan</a>
+          <a href="#features-overview" class="nav-link">Facilities</a>
+          <a href="#directory-section" class="nav-link">Labs Directory</a>
+          <a href="#blueprint-compare" class="nav-link">Blueprint Archive</a>
+          <a href="#contact-section" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="https://aitr.ac.in" target="_blank" rel="noopener" class="admission-pill">
+            <span class="pulse-dot"></span> ADMISSION 2026-27
+          </a>
+          <a href="#floorplan-explorer-section" class="btn-nav-2d" id="nav-btn-2dmap">
+            <span>🗺️</span> 2D CAD Plan
+          </a>
+          <button class="btn-nav-walk" id="nav-btn-start-walk">
+            <span>🚶</span> Start Virtual Walk
+          </button>
+        </div>
       </div>
     </header>
 
-    <!-- Main Landing Content -->
+    <!-- 3. UNIVERSITY ANNOUNCEMENT TICKER -->
+    <div class="aitr-notice-ticker">
+      <div class="ticker-inner">
+        <div class="ticker-badge">
+          <span class="ticker-icon">📢</span> BULLETIN
+        </div>
+        <div class="ticker-content">
+          <div class="ticker-track">
+            <span>🎓 Department of Mechanical Engineering Ground Floor Interactive CAD Floor Plan is active</span>
+            <span class="ticker-dot">•</span>
+            <span>Central Connecting Spine links Block 1, Block 2, Block 3, Palm Avenue and Sports Complex</span>
+            <span class="ticker-dot">•</span>
+            <span>41 Verified Spaces Catalogued across 3 Blocks & Amenities</span>
+            <span class="ticker-dot">•</span>
+            <span>40 Sequential First-Person Street View POV nodes available</span>
+            <span class="ticker-dot">•</span>
+            <span>⭐ NAAC 'A+' Accredited Autonomous Engineering Campus · NBA Accredited Programs</span>
+            <span class="ticker-dot">•</span>
+            <span>🔬 Industry Centers of Excellence: SKF Condition Monitoring, IBM Cloud & AI, AICTE IDEA Lab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. MAIN ACADEMIC HERO BANNER -->
     <main>
-      <!-- Hero Section -->
       <section class="landing-hero" id="overview">
-        <div class="hero-badge-tag">
-          <span>🎓</span> Acropolis Institute of Technology and Research, Indore
-        </div>
-        <h1 class="hero-headline">
-          Interactive Campus Walk & 2D Floor Plan Navigator
-        </h1>
-        <p class="hero-subhead">
-          Welcome to the digital campus navigator for the Department of Mechanical Engineering. 
-          Experience a dual-mode navigation system: inspect our high-precision architectural 
-          <strong>2D Ground Floor Plan of Blocks 1, 2, and 3</strong> with industry labs and classrooms, 
-          or take an immersive <strong>first-person street-view walk</strong> from the Security Gate to departmental corridors.
-        </p>
+        <div class="hero-container">
+          <!-- Institutional Breadcrumb -->
+          <div class="hero-breadcrumb">
+            <span>Home</span> <span class="sep">/</span> 
+            <span>Departments</span> <span class="sep">/</span> 
+            <span>Mechanical Engineering</span> <span class="sep">/</span> 
+            <span class="current">Ground Floor Spatial Twin</span>
+          </div>
 
-        <div class="hero-actions">
-          <a href="#floorplan-explorer-section" class="btn-hero primary">
-            <span>🗺️</span> Explore 2D Map (3 Blocks)
-          </a>
-          <button class="btn-hero secondary" id="hero-btn-walk">
-            <span>🚶</span> Start Virtual Street Walk
-          </button>
-          <a href="#directory-section" class="btn-hero secondary">
-            <span>🔬</span> Browse Labs & CoE
-          </a>
-        </div>
+          <!-- Official College Motto -->
+          <div class="hero-college-motto">
+            <span class="motto-star">✦</span> "Rooted in Wisdom. Driven by Innovation. Defined by Excellence." <span class="motto-star">✦</span>
+          </div>
 
-        <!-- Key Campus Stats -->
-        <div class="hero-stats-grid">
-          <div class="stat-card glass">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Connected Academic Blocks</div>
+          <h1 class="hero-headline">
+            Ground Floor Architectural CAD Plan & 360° POV Virtual Campus Walk
+          </h1>
+
+          <p class="hero-subhead">
+            Official spatial navigation portal for the Department of Mechanical Engineering at 
+            <strong>Acropolis Institute of Technology and Research (AITR), Indore</strong>. 
+            Experience a dual-mode interactive digital twin: inspect our millimeter-precise 
+            <strong>2D Architectural Floor Plan</strong> covering Blocks 1, 2, and 3, or walk step-by-step 
+            through <strong>40 high-resolution street-view vantage points</strong> from the Security Gate to research laboratories and the Sports Complex.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#floorplan-explorer-section" class="btn-hero primary">
+              <span>🗺️</span> Explore 2D CAD Floor Plan
+            </a>
+            <button class="btn-hero secondary" id="hero-btn-walk">
+              <span>🚶</span> Launch 360° Virtual Walk
+            </button>
+            <a href="#directory-section" class="btn-hero outline">
+              <span>🔬</span> Browse 41 Labs & CoE
+            </a>
           </div>
-          <div class="stat-card glass">
-            <div class="stat-number">28+</div>
-            <div class="stat-label">Specialized Labs & Rooms</div>
-          </div>
-          <div class="stat-card glass">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Centers of Excellence</div>
-          </div>
-          <div class="stat-card glass">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Ground Floor Coverage</div>
+
+          <!-- Official Institutional Stats -->
+          <div class="hero-stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">41</div>
+              <div class="stat-label">Ground Floor Spaces</div>
+              <div class="stat-sub">Specialized Labs, Halls & Offices</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">40</div>
+              <div class="stat-label">Street-View POVs</div>
+              <div class="stat-sub">Sequential Virtual Walk Nodes</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">3+</div>
+              <div class="stat-label">Academic Wings + Hub</div>
+              <div class="stat-sub">Blocks 1, 2, 3, Palm Ave & Sports</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">NAAC A+</div>
+              <div class="stat-label">Accreditation Grade</div>
+              <div class="stat-sub">NBA Accredited Mechanical Dept</div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Features Cards Section -->
+      <!-- 5. FEATURES OVERVIEW SECTION -->
       <section class="features-section" id="features-overview">
+        <div class="features-header">
+          <span class="section-tag-badge">CAMPUS INFRASTRUCTURE</span>
+          <h2>Integrated Digital Campus Twin</h2>
+          <p>Precision architectural vector blueprints combined with immersive first-person photographic walkthroughs</p>
+        </div>
+
         <div class="features-grid">
-          <div class="feature-card glass">
+          <div class="feature-card">
             <div class="feature-icon-box">🗺️</div>
             <h3>Architectural 2D Floor Plan</h3>
             <p>
-              Accurately drafted from the official Department Ground Floor blueprint. 
-              Explore Blocks 1, 2, and 3 with room dimensions, seating capacity, equipment listings, 
-              live search, and CAD blueprint mode.
+              Faithfully drafted from the official Department Ground Floor blueprint. 
+              Inspect Blocks 1, 2, and 3 with room dimensions, in-charge faculty, seating capacity, 
+              equipment catalogs, live search, and a toggleable CAD blueprint mode.
             </p>
+            <a href="#floorplan-explorer-section" class="card-link">View Floor Plan & Drawing Sheet ➜</a>
           </div>
 
-          <div class="feature-card glass">
+          <div class="feature-card">
             <div class="feature-icon-box">🚶</div>
-            <h3>First-Person Street-View Walk</h3>
+            <h3>360° POV Virtual Street Walk</h3>
             <p>
-              Walk step-by-step through the campus using high-resolution POV photography. 
-              Features directional floating arrows, intelligent pathfinding, and "Walk me there" auto-pilot navigation.
+              Walk step-by-step from the campus Security Gate through the Royal Palm Avenue, 
+              Block 1 Forecourt, Block 2 Facade, Block 3 Interior, and Canteen Food Truck Plaza 
+              with directional floating arrows and automatic pathfinding.
             </p>
+            <a href="#" onclick="CampusWalk.switchMode('walk'); return false;" class="card-link">Start Walking Campus ➜</a>
           </div>
 
-          <div class="feature-card glass">
+          <div class="feature-card">
             <div class="feature-icon-box">🔬</div>
             <h3>Industry Centers of Excellence</h3>
             <p>
-              Direct access to world-class facilities: <strong>IBM Software CoE</strong> (Cloud & AI), 
+              Direct access to world-class industry labs: <strong>IBM Software CoE</strong> (Cloud & AI), 
               <strong>SKF CoE Room 23</strong> (Condition Monitoring & Bearing Tribology), and 
-              <strong>AICTE IDEA Lab</strong> (3D Printing & Prototyping).
+              <strong>AICTE IDEA Lab</strong> (3D Prototyping & Prototyping).
             </p>
+            <a href="#directory-section" class="card-link">Explore CoE Equipment ➜</a>
           </div>
         </div>
       </section>
 
-      <!-- 2D FLOOR PLAN EXPLORER SECTION -->
+      <!-- 6. 2D FLOOR PLAN EXPLORER SECTION -->
       <section class="floorplan-explorer-section" id="floorplan-explorer-section">
         <div class="section-header-row">
           <div class="section-titles">
+            <span class="drawing-meta-badge">DRAWING REF: AITR-MECH-GF-2026 · SCALE 1:100 ARCHITECTURAL</span>
             <h2>Architectural 2D Floor Plan (Ground Floor)</h2>
-            <p>Interactive vector CAD blueprint of Block 1, Block 2, and Block 3 · Click any room or lab to inspect details</p>
+            <p>Interactive vector CAD blueprint of Block 1, Block 2, Block 3, Palm Avenue & Sports Complex · Click any space to inspect details</p>
           </div>
 
           <!-- Live Room Search -->
           <div class="map2d-search-box">
             <svg class="search-icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>
-            <input type="text" id="map2d-search-input" placeholder="Search room, lab, or code (e.g. SKF, IBM, TR-101)..." autocomplete="off">
+            <input type="text" id="map2d-search-input" placeholder="Search room, lab, in-charge faculty, or code (e.g. SKF, Room 31, Canteen)..." autocomplete="off">
             <div class="map2d-search-results" id="map2d-search-results" hidden></div>
           </div>
         </div>
@@ -183,11 +281,12 @@
         </div>
       </section>
 
-      <!-- Department Facilities & Labs Directory -->
+      <!-- 7. DEPARTMENT FACILITIES & LABS DIRECTORY -->
       <section class="directory-section" id="directory-section">
-        <div class="section-titles">
-          <h2>Department Facilities & Rooms Directory</h2>
-          <p>Comprehensive list of laboratories, classrooms, and administrative offices across Blocks 1, 2, and 3</p>
+        <div class="features-header">
+          <span class="section-tag-badge">FACILITIES DIRECTORY</span>
+          <h2>Department Facilities & Laboratories Directory</h2>
+          <p>Comprehensive roster of academic laboratories, research centers, classrooms, and administrative offices</p>
         </div>
 
         <div class="rooms-directory-grid" id="rooms-directory-grid">
@@ -195,49 +294,165 @@
         </div>
       </section>
 
-      <!-- Blueprint Photo Reference Section -->
+      <!-- 8. BLUEPRINT PHOTO REFERENCE SECTION -->
       <section class="blueprint-reference-section" id="blueprint-compare">
-        <div class="blueprint-compare-card glass">
+        <div class="blueprint-compare-card">
           <div class="compare-photo-wrap">
             <img src="photos/floor-plan.jpg" alt="Mechanical Engineering Department Ground Floor Plan at AITR Indore" loading="lazy">
-            <span class="compare-photo-badge">📷 Original Department Wall Blueprint</span>
+            <span class="compare-photo-badge">📷 Mounted Department Wall Blueprint</span>
           </div>
           <div class="compare-info">
-            <span class="hero-badge-tag">📐 Source Blueprint Reference</span>
+            <span class="section-tag-badge">ARCHITECTURAL SOURCE REFERENCE</span>
             <h3>Drawn Directly From Official Floor Plan</h3>
             <p>
-              The interactive 2D map above was drafted based directly on this official Ground Floor Plan 
+              The interactive 2D digital twin above was drafted based directly on this official Ground Floor Plan 
               mounted at the Department of Mechanical Engineering entrance lobby at Acropolis Institute of Technology and Research (AITR), Indore.
             </p>
             <ul class="compare-features-list">
               <li><strong>North Orientation:</strong> Oriented with North pointing to the right, matching the blueprint's original arrow marker.</li>
               <li><strong>Front Corridor & Lawns:</strong> Reflects the three manicured lawns, two pedestrian access pathways, and main access road.</li>
-              <li><strong>3 Academic Wings:</strong> Captures the angled layout of Block 1 (Auditorium & Workshop), Block 2 (IBM, SKF & AICTE Labs), and Block 3 (Core Mechanical & Automotive Labs).</li>
+              <li><strong>3 Academic Wings:</strong> Captures Block 1 (Auditorium & Workshop), Block 2 (IBM, SKF & AICTE Labs), and Block 3 (Core Mechanical & Automotive Labs).</li>
               <li><strong>Exact Dimensions:</strong> Preserves all architectural room dimensions (e.g. 61'2" × 34'2", 26'10" × 34'0", 41'10" × 39'6").</li>
             </ul>
-            <a href="#floorplan-explorer-section" class="btn primary glow">
+            <a href="#floorplan-explorer-section" class="btn-hero primary" style="padding:10px 22px; font-size:13.5px;">
               Explore Vector 2D Map ➜
             </a>
           </div>
         </div>
       </section>
+
+      <!-- 9. DEPARTMENT CONTACT & HELPDESK SECTION -->
+      <section class="aitr-contact-section" id="contact-section">
+        <div class="contact-container">
+          <div class="contact-header">
+            <span class="section-tag-badge">CAMPUS INQUIRIES & SUPPORT</span>
+            <h2>Department Helpdesk & Key Contacts</h2>
+            <p>Reach out to the Mechanical Engineering Department or visit our campus in Indore</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <div class="contact-icon">👨‍🏫</div>
+              <h4>Head of Department</h4>
+              <p class="contact-role">Mechanical Engineering</p>
+              <p class="contact-detail">Ground Floor, Block-2, AITR Indore</p>
+              <p class="contact-link"><a href="mailto:mechod@acropolis.in">mechod@acropolis.in</a></p>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon">🏢</div>
+              <h4>Department Office</h4>
+              <p class="contact-role">Academic Affairs & Lab Stores</p>
+              <p class="contact-detail">Phone: 0731-4730000 (Ext. 204)</p>
+              <p class="contact-link"><a href="mailto:mechanical@acropolis.in">mechanical@acropolis.in</a></p>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon">🎓</div>
+              <h4>Admissions Cell</h4>
+              <p class="contact-role">B.Tech Mechanical Engineering (2026-27)</p>
+              <p class="contact-detail">Helpline: +91 97524 10845 / 46</p>
+              <p class="contact-link"><a href="mailto:admissions@acropolis.in">admissions@acropolis.in</a></p>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon">📍</div>
+              <h4>Campus Location</h4>
+              <p class="contact-role">Security Gate & Reception</p>
+              <p class="contact-detail">Bypass Road, Manglia, Indore (M.P.) 453771</p>
+              <p class="contact-link">Mon – Sat: 9:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Landing Footer -->
-    <footer class="landing-footer">
-      <div class="footer-links">
-        <a href="#overview">Overview</a>
-        <a href="#floorplan-explorer-section">2D Floor Plan</a>
-        <a href="#directory-section">Labs Directory</a>
-        <a href="#blueprint-compare">Blueprint Reference</a>
-        <a href="#" onclick="CampusWalk.switchMode('walk'); return false;">Virtual Walk</a>
+    <!-- 10. OFFICIAL 4-COLUMN ACROPOLIS FOOTER -->
+    <footer class="aitr-portal-footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Col 1: College Info -->
+          <div class="footer-col brand-col">
+            <div class="footer-brand">
+              <div class="footer-crest-wrap">
+                <svg viewBox="0 0 100 100" width="42" height="42" aria-hidden="true">
+                  <path d="M50 4 C24 4 10 16 10 38 C10 68 34 88 50 96 C66 88 90 68 90 38 C90 16 76 4 50 4 Z" fill="#0c1e38" stroke="#f58220" stroke-width="3" />
+                  <polygon points="50,16 28,27 72,27" fill="#fcd34d" />
+                  <rect x="29" y="28" width="42" height="3" fill="#fcd34d" />
+                  <rect x="32" y="32" width="4" height="20" rx="1" fill="#fcd34d" />
+                  <rect x="42" y="32" width="4" height="20" rx="1" fill="#fcd34d" />
+                  <rect x="54" y="32" width="4" height="20" rx="1" fill="#fcd34d" />
+                  <rect x="64" y="32" width="4" height="20" rx="1" fill="#fcd34d" />
+                  <rect x="28" y="53" width="44" height="3" fill="#fcd34d" />
+                </svg>
+              </div>
+              <div class="footer-brand-title">
+                <strong>ACROPOLIS INSTITUTE</strong>
+                <span>OF TECHNOLOGY AND RESEARCH</span>
+              </div>
+            </div>
+            <p class="footer-bio">
+              Acropolis Institute of Technology and Research (AITR) is an autonomous, NAAC 'A+' accredited premier engineering institution in Indore, Madhya Pradesh. Approved by AICTE, affiliated to RGPV Bhopal and DAVV Indore.
+            </p>
+            <div class="footer-acc-badges">
+              <span class="acc-pill">NAAC 'A+'</span>
+              <span class="acc-pill">NBA Accredited</span>
+              <span class="acc-pill">AICTE Approved</span>
+            </div>
+          </div>
+
+          <!-- Col 2: Labs & CoE -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Department Facilities</h4>
+            <ul class="footer-links-list">
+              <li><a href="#floorplan-explorer-section">SKF CoE Condition Monitoring Lab</a></li>
+              <li><a href="#floorplan-explorer-section">IBM Software Center of Excellence</a></li>
+              <li><a href="#floorplan-explorer-section">Room 31 3D Printing Prototyping Lab</a></li>
+              <li><a href="#floorplan-explorer-section">Heat & Mass Transfer Research Lab</a></li>
+              <li><a href="#floorplan-explorer-section">Central Multi-Tier Auditorium</a></li>
+              <li><a href="#floorplan-explorer-section">Sports Complex & Canteen Plaza</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Academic Links -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Institutional Portals</h4>
+            <ul class="footer-links-list">
+              <li><a href="https://aitr.ac.in" target="_blank" rel="noopener">AITR Official Web Portal</a></li>
+              <li><a href="https://rgpv.ac.in" target="_blank" rel="noopener">RGPV Bhopal University Portal</a></li>
+              <li><a href="https://dauniv.ac.in" target="_blank" rel="noopener">DAVV Indore University Portal</a></li>
+              <li><a href="https://aicte-india.org" target="_blank" rel="noopener">AICTE Approval Details</a></li>
+              <li><a href="https://aitr.ac.in" target="_blank" rel="noopener">NIRF Institutional Disclosure</a></li>
+              <li><a href="https://aitr.ac.in" target="_blank" rel="noopener">Grievance Redressal & Anti-Ragging</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Campus Contact -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Campus Contact</h4>
+            <div class="footer-contact-info">
+              <p><strong>Address:</strong> Bypass Road, Manglia Square, Indore, Madhya Pradesh - 453771</p>
+              <p><strong>Helpline:</strong> 0731-4730000, 4730001</p>
+              <p><strong>Admissions:</strong> +91 97524 10845 / 46</p>
+              <p><strong>Email:</strong> info@acropolis.in</p>
+              <p><strong>Campus Hours:</strong> Mon – Sat: 9:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="footer-bottom-bar">
+          <div class="copyright-text">
+            © 2026 Acropolis Institute of Technology and Research (AITR), Indore. Department of Mechanical Engineering. All Rights Reserved.
+          </div>
+          <div class="footer-sub-links">
+            <a href="#overview">Campus Overview</a>
+            <span class="sep">•</span>
+            <a href="#floorplan-explorer-section">2D Floor Plan</a>
+            <span class="sep">•</span>
+            <a href="#" onclick="CampusWalk.switchMode('walk'); return false;">360° Virtual Walk</a>
+            <span class="sep">•</span>
+            <a href="#contact-section">Campus Directory</a>
+          </div>
+        </div>
       </div>
-      <p>
-        Department of Mechanical Engineering · Acropolis Institute of Technology and Research (AITR), Indore
-      </p>
-      <p style="font-size:12px; opacity:0.6; margin-top:6px;">
-        Designed for students, faculty, and campus visitors. Keyboard shortcuts: <kbd>/</kbd> to search, <kbd>Esc</kbd> to close modal.
-      </p>
     </footer>
   </div>
 
@@ -253,13 +468,13 @@
   <!-- TOP BAR HUD -->
   <header class="hud top">
     <div class="loc glass" id="locChip">
-      <div class="loc-area" id="locArea">Campus</div>
+      <div class="loc-area" id="locArea">Acropolis Campus</div>
       <h1 class="loc-name" id="locName">Loading…</h1>
     </div>
 
     <div class="search glass" role="search">
       <svg class="s-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>
-      <input id="q" type="text" placeholder="Where to? Try “SKF”, “IBM”, “Block-II”, “parking”…" autocomplete="off"
+      <input id="q" type="text" placeholder="Where to? Try “SKF”, “IBM”, “Block-II”, “Room 31”, “Canteen”…" autocomplete="off"
              role="combobox" aria-expanded="false" aria-controls="results" aria-label="Search destination">
       <kbd id="slashHint" aria-hidden="true">/</kbd>
       <ul id="results" role="listbox" hidden></ul>
@@ -267,8 +482,8 @@
 
     <div class="top-actions">
       <!-- Return to Landing Page & 2D Map Button -->
-      <button class="btn glass hud-home-btn" id="homeBtn" title="Return to Landing Page & 2D Map">
-        🏠 Home & 2D Map
+      <button class="btn glass hud-home-btn" id="homeBtn" title="Return to College Portal & 2D Map">
+        🏛️ Return to Portal & 2D Map
       </button>
       <button class="btn glass" id="placesBtn" aria-expanded="false" aria-controls="places">Places</button>
     </div>
@@ -300,7 +515,7 @@
   <!-- PLACES DRAWER -->
   <aside id="places" class="places glass" hidden>
     <div class="places-head">
-      <h2>All places</h2>
+      <h2>Campus Directory</h2>
       <button class="x" id="placesClose" aria-label="Close">×</button>
     </div>
     <div id="placesList"></div>
@@ -329,7 +544,7 @@
   </aside>
 
   <div id="toast" class="toast glass" role="status" hidden></div>
-  <div id="loader"><div class="ld-mark"></div><p>Loading campus…</p></div>
+  <div id="loader"><div class="ld-mark"></div><p>Loading Acropolis Campus…</p></div>
 
   <!-- SCRIPTS -->
   <script src="js/data.js"></script>
